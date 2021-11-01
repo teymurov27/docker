@@ -96,13 +96,13 @@ rm -rf /var/lib/apt/lists/*
 
 
 # Fix bug with CUDA and Eigen <= 3.3.7
-# Fix bug with converting to eigen-3.3.4 as error says tar: This does not look like a tar archive
+# Fix bug with upgrading to eigen-3.4.0
 
 WORKDIR /tmp
 # hadolint ignore=DL3003
-RUN curl -sL -o eigen-3.3.4.tar.gz https://gitlab.com/libeigen/eigen/-/archive/3.3.4/eigen-3.3.4.tar.bz2 && \
-    tar xf eigen-3.3.4.tar.gz && \
-    cd eigen-3.3.4 && \
+RUN curl -sL -o eigen-3.4.0.tar.gz https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.bz2 && \
+    tar xf eigen-3.4.0.tar.gz && \
+    cd eigen-3.4.0 && \
     mkdir build && \
     cd build && \
     cmake .. && \
